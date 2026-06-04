@@ -40,7 +40,16 @@ export function VasTabContent({ tab }: { tab: TabKey }) {
               <Tooltip formatter={(v, name) => [`${v}개`, name]} />
               <Legend
                 iconSize={8}
-                formatter={(value) => <span className="text-[11px]">{value}</span>}
+                content={() => (
+                  <div className="flex justify-center gap-3 mt-1">
+                    {CARRIER_IDS.map((id) => (
+                      <span key={id} className="flex items-center gap-1 text-[11px]">
+                        <span style={{ backgroundColor: CARRIERS[id].color, width: 8, height: 8, borderRadius: 2, display: "inline-block" }} />
+                        {CARRIERS[id].name}
+                      </span>
+                    ))}
+                  </div>
+                )}
               />
             </RadialBarChart>
           </ResponsiveContainer>
