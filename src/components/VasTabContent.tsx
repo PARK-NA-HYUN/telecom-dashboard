@@ -7,7 +7,7 @@ import { SERVICES, TAB_HREFS, type TabKey } from "@/data/services"
 export function VasTabContent({ tab }: { tab: TabKey }) {
   const tabServices = SERVICES.filter((s) => s.tab === tab)
 
-  const radialData = CARRIER_IDS.map((id) => ({
+  const radialData = [...CARRIER_IDS].reverse().map((id) => ({
     name: CARRIERS[id].name,
     count: tabServices.filter((s) => s.carrier === id).length,
     fill: CARRIERS[id].color,
