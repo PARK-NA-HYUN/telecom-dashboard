@@ -10,13 +10,21 @@ export type Banner = {
 }
 
 export const BANNERS: Banner[] = [
-  // LG U+ (2)
+  // LG U+ (3)
+  {
+    carrier: "lgu",
+    title: "듀얼넘버 온앤오프 신규가입 이벤트",
+    caption: "워라밸 지키고 커피 받기! · 6월 한정 100% 선물 증정",
+    href: "https://www.lguplus.com/benefit-event/ongoing/82318",
+    imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_835/content_1544/Image38.png?20260602135128508",
+    changed: true,
+  },
   {
     carrier: "lgu",
     title: "벨링모아 여름을 부탁해!",
     caption: "가입하면 아이스커피 100% 증정",
     href: "https://www.lguplus.com/benefit-event/ongoing/82313",
-    imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_835/content_2023/Image38.png?20260507144149786",
+    imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_835/content_2023/Image38.png?20260601104459619",
     changed: false,
   },
   {
