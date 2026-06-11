@@ -3,14 +3,13 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CARRIERS, CARRIER_IDS } from "@/lib/carriers"
-import { BANNERS } from "@/data/banners"
-import { META } from "@/data/meta"
 import { ChangeIndicator } from "@/components/ChangeIndicator"
+import type { DailySnapshot } from "@/data/snapshots"
 
-export function BannerSection() {
+export function BannerSection({ snapshot }: { snapshot: DailySnapshot }) {
   const chartData = CARRIER_IDS.map((id) => ({
     name: CARRIERS[id].shortName,
-    count: BANNERS.filter((b) => b.carrier === id).length,
+    count: snapshot.banners.filter((b) => b.carrier === id).length,
     color: CARRIERS[id].color,
   }))
 
@@ -42,7 +41,7 @@ export function BannerSection() {
         </Card>
 
         {CARRIER_IDS.map((id) => {
-          const banners = BANNERS.filter((b) => b.carrier === id)
+          const banners = snapshot.banners.filter((b) => b.carrier === id)
           return (
             <Card key={id} className="border shadow-sm overflow-hidden">
               <CardHeader
@@ -54,7 +53,7 @@ export function BannerSection() {
                   <span className="text-[10px] font-normal text-gray-400">({banners.length})</span>
                 </CardTitle>
                 <p className="text-[11px] text-gray-500 mt-1 leading-relaxed">
-                  {META.bannerAnalysis[id]}
+                  {snapshot.bannerAnalysis[id]}
                 </p>
               </CardHeader>
               <CardContent className="px-4 pt-3 pb-4 space-y-2">

@@ -1,16 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { CARRIERS, CARRIER_IDS } from "@/lib/carriers"
-import { BANNERS } from "@/data/banners"
-import { EVENTS } from "@/data/events"
+import type { DailySnapshot } from "@/data/snapshots"
 
-export function KpiRow() {
+export function KpiRow({ snapshot }: { snapshot: DailySnapshot }) {
   const bannerCounts = CARRIER_IDS.map((id) => ({
     id,
-    count: BANNERS.filter((b) => b.carrier === id).length,
+    count: snapshot.banners.filter((b) => b.carrier === id).length,
   }))
   const eventCounts = CARRIER_IDS.map((id) => ({
     id,
-    count: EVENTS.filter((e) => e.carrier === id).length,
+    count: snapshot.events.filter((e) => e.carrier === id).length,
   }))
 
   return (

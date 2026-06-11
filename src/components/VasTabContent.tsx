@@ -2,10 +2,10 @@
 
 import { RadialBarChart, RadialBar, ResponsiveContainer, Tooltip, Legend } from "recharts"
 import { CARRIERS, CARRIER_IDS } from "@/lib/carriers"
-import { SERVICES, TAB_HREFS, type TabKey } from "@/data/services"
+import { TAB_HREFS, type TabKey, type Service } from "@/data/services"
 
-export function VasTabContent({ tab }: { tab: TabKey }) {
-  const tabServices = SERVICES.filter((s) => s.tab === tab)
+export function VasTabContent({ tab, services }: { tab: TabKey; services: Service[] }) {
+  const tabServices = services.filter((s) => s.tab === tab)
 
   const radialData = [...CARRIER_IDS].reverse().map((id) => ({
     name: CARRIERS[id].name,

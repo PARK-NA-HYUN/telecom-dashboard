@@ -1,7 +1,16 @@
-import { META } from "@/data/meta"
 import { CARRIERS, CARRIER_IDS } from "@/lib/carriers"
+import { DatePicker } from "@/components/DatePicker"
+import type { DailySnapshot } from "@/data/snapshots"
 
-export function Header() {
+export function Header({
+  snapshot,
+  availableDates,
+  onSelectDate,
+}: {
+  snapshot: DailySnapshot
+  availableDates: string[]
+  onSelectDate: (date: string) => void
+}) {
   return (
     <header className="bg-[#1a1a2e] text-white px-4 py-8">
       <div className="max-w-[1400px] mx-auto">
@@ -9,9 +18,14 @@ export function Header() {
           <h1 className="text-2xl font-bold tracking-tight">
             통신 3사 VAS 부가서비스 비교 대시보드
           </h1>
-          <p className="mt-1 text-sm text-gray-400">
-            기준일: {META.date} &nbsp;|&nbsp; 유플러스 · SKT · KT
-          </p>
+          <div className="mt-3">
+            <DatePicker
+              selected={snapshot.date}
+              availableDates={availableDates}
+              onSelect={onSelectDate}
+            />
+          </div>
+          <p className="mt-2 text-sm text-gray-400">유플러스 · SKT · KT</p>
           <div className="flex justify-center gap-3 mt-3">
             {CARRIER_IDS.map((id) => (
               <span
@@ -35,7 +49,7 @@ export function Header() {
                 {CARRIERS[id].name}
               </p>
               <p className="text-xs text-gray-300 leading-relaxed">
-                {META.vasAnalysis[id]}
+                {snapshot.vasAnalysis[id]}
               </p>
             </div>
           ))}

@@ -2,12 +2,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { VasTabContent } from "@/components/VasTabContent"
 import { TAB_LABELS, TAB_ICONS, type TabKey } from "@/data/services"
-import { META } from "@/data/meta"
 import { CARRIERS, CARRIER_IDS } from "@/lib/carriers"
+import type { DailySnapshot } from "@/data/snapshots"
 
 const TABS = Object.keys(TAB_LABELS) as TabKey[]
 
-export function VasSection() {
+export function VasSection({ snapshot }: { snapshot: DailySnapshot }) {
   return (
     <section className="max-w-[1400px] mx-auto px-4 pb-10">
       <h2 className="text-sm font-bold text-gray-700 mb-3">📋 VAS 부가서비스 비교</h2>
@@ -20,7 +20,7 @@ export function VasSection() {
             style={{ borderLeft: `4px solid ${CARRIERS[id].color}` }}
           >
             <strong style={{ color: CARRIERS[id].color }}>{CARRIERS[id].name}</strong>{" "}
-            {META.vasAnalysis[id]}
+            {snapshot.vasAnalysis[id]}
           </div>
         ))}
       </div>
@@ -41,7 +41,7 @@ export function VasSection() {
             </TabsList>
             {TABS.map((tab) => (
               <TabsContent key={tab} value={tab}>
-                <VasTabContent tab={tab} />
+                <VasTabContent tab={tab} services={snapshot.services} />
               </TabsContent>
             ))}
           </Tabs>

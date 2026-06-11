@@ -3,14 +3,13 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CARRIERS, CARRIER_IDS } from "@/lib/carriers"
-import { EVENTS } from "@/data/events"
-import { META } from "@/data/meta"
 import { ChangeIndicator } from "@/components/ChangeIndicator"
+import type { DailySnapshot } from "@/data/snapshots"
 
-export function EventSection() {
+export function EventSection({ snapshot }: { snapshot: DailySnapshot }) {
   const chartData = CARRIER_IDS.map((id) => ({
     name: CARRIERS[id].shortName,
-    count: EVENTS.filter((e) => e.carrier === id).length,
+    count: snapshot.events.filter((e) => e.carrier === id).length,
     color: CARRIERS[id].color,
   }))
 
@@ -42,7 +41,7 @@ export function EventSection() {
         </Card>
 
         {CARRIER_IDS.map((id) => {
-          const events = EVENTS.filter((e) => e.carrier === id)
+          const events = snapshot.events.filter((e) => e.carrier === id)
           return (
             <Card key={id} className="border shadow-sm overflow-hidden">
               <CardHeader
@@ -54,7 +53,7 @@ export function EventSection() {
                   <span className="text-[10px] font-normal text-gray-400">({events.length})</span>
                 </CardTitle>
                 <p className="text-[11px] text-gray-500 mt-1 leading-relaxed">
-                  {META.eventAnalysis[id]}
+                  {snapshot.eventAnalysis[id]}
                 </p>
               </CardHeader>
               <CardContent className="px-4 pt-3 pb-4 space-y-2">
