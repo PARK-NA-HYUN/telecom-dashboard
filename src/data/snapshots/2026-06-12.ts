@@ -4,12 +4,12 @@ import { SERVICES } from "@/data/services"
 export const SNAPSHOT: DailySnapshot = {
   date: "2026-06-12",
   bannerAnalysis: {
-    lgu: "구성 변경 — 피싱/해킹 이벤트 배너 제거, V컬러링·익시오·유심보호 서비스 추천 배너 3섹션 신규 추가. 이벤트 배너 3종→2종, 총 배너 6종으로 확대",
-    skt: "일부 변경 — 약속번호 배너 문구 변경(\"원하는 번호 추가\"→\"집에 두고 오셨나요\") 및 순서 조정(보험찾기 1번↔약속번호 2번 순서 변경). T올케어플러스6 유지",
+    lgu: "변동 없음 — 듀얼넘버 온앤오프·벨링모아 여름·피싱/해킹 안심 배너 3종 동일",
+    skt: "일부 변경 — 약속번호 배너 문구 변경(\"원하는 번호 추가\"→\"집에 두고 오셨나요\") 및 순서 조정(보험찾기 1번↔약속번호 2번). T올케어플러스6 유지",
     kt:  "변동 없음 — 아껴드림·데이터충전·My time plan·링투유 배너 4종 그대로 유지",
   },
   eventAnalysis: {
-    lgu: "1건 종료 — 버디5 이벤트(~6/5) 만료로 제거. 출석체크·멤버십 신규가입·통신심플·인터넷+IPTV·모바일요금 5건 유지",
+    lgu: "대폭 변경 — 버디5(~6/5)·통신심플 이벤트 종료. Simple사서함·전시회입장권·유튜브+구글AI Pro·로밍100개국·장기고객감사·원플원친구추천·일본로밍 7건 신규 추가. 총 11건으로 증가",
     skt: "변동 없음 — 고향사랑기부(~7.08)·T멤버십 신규 제휴(~12.31) 2건 유지",
     kt:  "4건 신규 — 2026 광화문광장 거리응원(6/8~6/25)·월드컵 온라인 프로모션(6/5~7/19)·VVIP 블루보틀 6월·6월 네이버페이 이벤트 신규 추가. 총 9건으로 증가",
   },
@@ -19,10 +19,10 @@ export const SNAPSHOT: DailySnapshot = {
     kt:  "보안/안심 무료 서비스 3개(번호도용차단·유심보호·결제안심통보)를 2~4위에 집중 배치. 추천 항목 8개로 3사 중 가장 적음",
   },
   banners: [
-    // LG U+ (6) — 이벤트 2 + 서비스 추천 4
+    // LG U+ (3) — 변동 없음
     {
       carrier: "lgu",
-      title: "듀얼넘버 온앤오프 가입 이벤트",
+      title: "듀얼넘버 온앤오프 신규가입 이벤트",
       caption: "워라밸 지키고 커피 받기! · 6월 한정 100% 선물 증정",
       href: "https://www.lguplus.com/benefit-event/ongoing/82318",
       imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_835/content_1544/Image38.png?20260602135128508",
@@ -38,37 +38,13 @@ export const SNAPSHOT: DailySnapshot = {
     },
     {
       carrier: "lgu",
-      title: "V컬러링",
-      caption: "보이는 통화연결음으로 나를 표현해 보아요",
-      href: "https://www.lguplus.com/mobile/plan/addon/addon-ringtones-callertunes/LRZ0002150",
-      imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_840/content_1554/Image60.png",
-      changed: true,
+      title: "피싱/해킹 안심 서비스",
+      caption: "너겟 요금제 가입자 24개월 무료",
+      href: "https://www.lguplus.com/mobile/plan/addon/addon-safe/LRZ1005178",
+      imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_835/content_1545/Image38.png?20250821170650406",
+      changed: false,
     },
-    {
-      carrier: "lgu",
-      title: "V컬러링 음악감상 플러스",
-      caption: "듣고 보는 즐거움, V컬러링과 음악감상을 하나로!",
-      href: "https://www.lguplus.com/mobile/plan/addon/addon-digitalcontent/LRZ1005266",
-      imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_840/content_1553/Image60.png",
-      changed: true,
-    },
-    {
-      carrier: "lgu",
-      title: "피싱/해킹안심서비스",
-      caption: "예상 못한 해킹 피해도 300만원까지 보상",
-      href: "https://www.lguplus.com/mobile/plan/addon/addon-familysafety-info/LRZ1002560",
-      imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_847/content_1567/Image60.png",
-      changed: true,
-    },
-    {
-      carrier: "lgu",
-      title: "유심보호서비스",
-      caption: "분실·도난에도 유심은 안전하게 지켜드려요",
-      href: "https://www.lguplus.com/mobile/plan/addon/addon-familysafety-info/LRZ1002321",
-      imgSrc: "https://www.lguplus.com/static/pc-contents/images/display/section_847/content_1566/Image60.png",
-      changed: true,
-    },
-    // SKT (3) — 약속번호 문구/순서 변경
+    // SKT (3) — 약속번호 배너 문구·순서 변경
     {
       carrier: "skt",
       title: "내게 맞는 휴대폰 보험 찾기",
@@ -128,12 +104,18 @@ export const SNAPSHOT: DailySnapshot = {
     },
   ],
   events: [
-    // LG U+ (5) — 버디5 이벤트(~6/5) 만료로 제거
+    // LG U+ (11) — 버디5·통신심플 종료, 7건 신규 추가
     { carrier:"lgu", title:"6월 U+one 앱 출석체크 이벤트", badge:"유플러스 혜택", period:"2026-06-01 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82311", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260529-092503-235-dNn8rzKy.png", isNew:false },
     { carrier:"lgu", title:"[멤버십] 6월 멤버십 신규 가입 이벤트", badge:"멤버십 혜택", period:"2026-06-01 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82300", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260601-011223-769-y7jz4IIE.jpg", isNew:false },
-    { carrier:"lgu", title:"가장 쉬운 통신 요금으로, 통신을 심플하게", badge:"유플러스 혜택", period:"2026-06-01 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82307", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260529-113803-853-60PnypsC.png", isNew:false },
-    { carrier:"lgu", title:"인터넷+IPTV 나에게 맞는 진짜 가입 혜택", badge:"홈 온라인 가입혜택", period:"진행중", href:"https://www.lguplus.com/benefit-event/ongoing/387", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/event/eh/20251231-040317-742-31XfX3PC.png", isNew:false },
-    { carrier:"lgu", title:"모바일 요금만 내고, 인터넷도 쓰세요.", badge:"홈 온라인 가입혜택", period:"진행중", href:"https://www.lguplus.com/benefit-event/ongoing/82302", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/event/eh/20260529-053247-970-49N4UfFO.png", isNew:false },
+    { carrier:"lgu", title:"Simple. 사서함 이벤트", badge:"유플러스 혜택", period:"2026-06-08 ~ 2026-06-26", href:"https://www.lguplus.com/benefit-event/ongoing/82309", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260605-060643-273-275yaKJ6.jpg", isNew:true },
+    { carrier:"lgu", title:"S26 시리즈도 U+에서 심플하게", badge:"모바일 온라인 가입혜택", period:"2026-01-30 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82171", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/event/eh/20260602-043035-817-VyTrKH13.png", isNew:false },
+    { carrier:"lgu", title:"모바일 요금만 내고, 인터넷도 쓰세요.", badge:"홈 온라인 가입혜택", period:"2026-06-01 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82302", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/event/eh/20260529-053247-970-49N4UfFO.png", isNew:false },
+    { carrier:"lgu", title:"인터넷+IPTV 나에게 맞는 진짜 가입 혜택", badge:"홈 온라인 가입혜택", period:"2026-05-29 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/387", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/event/eh/20251231-040317-742-31XfX3PC.png", isNew:false },
+    { carrier:"lgu", title:"전시회 입장권 무료 증정 이벤트", badge:"유플러스 혜택", period:"2026-06-11 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82342", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260611-050535-039-GLnvqaoe.png", isNew:true },
+    { carrier:"lgu", title:"유튜브+구글 AI Pro 쿠폰 이벤트", badge:"유플러스 혜택", period:"2026-06-11 ~ 2026-07-19", href:"https://www.lguplus.com/benefit-event/ongoing/82341", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260610-045438-404-4Vdce8vT.jpg", isNew:true },
+    { carrier:"lgu", title:"[로밍] 5G커버리지 100개국 달성 기념이벤트", badge:"유플러스 혜택", period:"2026-06-11 ~ 2026-07-14", href:"https://www.lguplus.com/benefit-event/ongoing/82332", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260608-110129-899-p3CV5ocS.jpg", isNew:true },
+    { carrier:"lgu", title:"6월 U+ 장기고객 감사 이벤트", badge:"멤버십 혜택", period:"2026-06-08 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82331", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260605-012344-879-QQQcHUWX.jpg", isNew:true },
+    { carrier:"lgu", title:"더운 여름 시원한 혜택! U+ 원플원 친구추천 이벤트", badge:"유플러스 혜택", period:"2026-06-08 ~ 2026-06-30", href:"https://www.lguplus.com/benefit-event/ongoing/82323", imgSrc:"https://www.lguplus.com/static-evet/pc-contents/images/evet/eh/20260605-044453-792-dGSVsTOR.png", isNew:true },
     // SKT (2) — 변동 없음
     { carrier:"skt", title:"고향사랑기부하면 15,000원 쿠폰 증정", badge:"멤버십", period:"2026-05-06 ~ 2026-07-08", href:"https://www.tworld.co.kr/web/benefit/event/detail/ing/TW000001913?GUBUN=start&SHOWGUBUN=thumbnail&index=0", imgSrc:"https://cdnw.tworld.co.kr/adminupload/poc/13352/7155/600075894.png", isNew:false },
     { carrier:"skt", title:"2026년 T 멤버십 신규 제휴사 소개", badge:"멤버십", period:"2026-01-09 ~ 2026-12-31", href:"https://www.tworld.co.kr/web/benefit/event/detail/ing/TW000001902?GUBUN=start&SHOWGUBUN=thumbnail&index=1", imgSrc:"https://cdnw.tworld.co.kr/adminupload/poc/17609/56474/88702075.png", isNew:false },
