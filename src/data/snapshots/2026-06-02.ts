@@ -3,6 +3,11 @@ import { SERVICES } from "@/data/services"
 
 export const SNAPSHOT: DailySnapshot = {
   date: "2026-06-02",
+  insights: [
+    "📊 이벤트 수: KT 7건 > LG U+ 6건 > SKT 2건 — KT가 멤버십·로밍 중심으로 가장 다양한 이벤트 운영",
+    "🛡️ LG U+·SKT는 보안/안심 서비스 배너 전면 배치, KT는 생활혜택 플랫폼(아껴드림) 강조로 전략 차별화",
+    "📌 3사 모두 배너 변동 없음 — 월초 이벤트 세팅 완료 후 안정적 운영 기간",
+  ],
   bannerAnalysis: {
     lgu: "변동 없음 — 벨링모아 여름·피싱/해킹 안심 서비스 배너 2종 그대로 유지",
     skt: "변동 없음 — 휴대폰보험 찾기·약속번호·T올케어플러스6 배너 3종 동일",

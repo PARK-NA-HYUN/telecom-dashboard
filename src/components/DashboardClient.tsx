@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Header } from "@/components/Header"
+import { InsightBanner } from "@/components/InsightBanner"
 import { KpiRow } from "@/components/KpiRow"
 import { BannerSection } from "@/components/BannerSection"
 import { EventSection } from "@/components/EventSection"
@@ -19,6 +20,7 @@ export function DashboardClient() {
         availableDates={AVAILABLE_DATES}
         onSelectDate={setSelectedDate}
       />
+      <InsightBanner snapshot={snapshot} />
       <KpiRow snapshot={snapshot} />
       <BannerSection snapshot={snapshot} />
       <EventSection snapshot={snapshot} />

@@ -3,6 +3,11 @@ import { SERVICES } from "@/data/services"
 
 export const SNAPSHOT: DailySnapshot = {
   date: "2026-06-04",
+  insights: [
+    "🆕 LG U+가 듀얼넘버 온앤오프 이벤트 배너 신규 추가(3종)로 번호 분리 서비스 공격적 프로모션 전개",
+    "📊 이벤트 수: LG U+ 6건 > KT 7건 > SKT 2건 — SKT는 멤버십 중심 2건만 운영 중",
+    "📌 KT·SKT 배너 변동 없음, LG U+만 이번 주 업데이트 — 3사 중 U+의 온라인 마케팅 활동이 가장 활발",
+  ],
   bannerAnalysis: {
     lgu: "신규 1건 추가 — 듀얼넘버 온앤오프 신규가입 이벤트(6/2~6/30) 배너 추가. 2종→3종으로 증가",
     skt: "변동 없음 — 휴대폰보험 찾기·약속번호·T올케어플러스6 배너 3종 동일",
